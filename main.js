@@ -9,6 +9,19 @@ let population = document.querySelector(".population")
 let capital = document.querySelector(".capital");
 let datas=[];
 
+// adding dark-theme
+let icon = document.querySelector("#icon");
+icon.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+        if (document.body.classList.contains("dark-them")) {
+                document.querySelector(".mode").textContent = "ligth mode";
+        } else {
+                
+        }
+        // icon.src= "<i class="fa-regular fa-sun"></i>";
+        
+}
+
 selectField.onclick = function(){
         list.classList.toggle("hide")
 }
@@ -63,20 +76,26 @@ function dataElt(data){
         capital.textContent = `Capital: ${data[0].capital[0]}`
 }
  
-// function dataElt(data){
-//         //console.log(data);
-//         datas.push(data[0].name.common);
-//         datas.push(data[0].population);
-//         datas.push(data[0].continents[0]);
-//         datas.push(data[0].capital[0]);
-//         console.log(datas)
-// // datas.map((item)=> item.classList.add('grey'));
-// datas.forEach((item) =>{
-//         item.classList.add('grey');
-// })
-//         country.textContent = datas[0]
-//         flag.src=data[0].flags.svg
-//         population.textContent = `Population: ${datas[1]}`
-//         locate.textContent = `Region: ${datas[2]}`
-//         capital.textContent = `Capital: ${datas[3]}`        
-// }
+
+// function to display all the countries on homepage
+const urlCountries = 'https://restcountries.com/v3.1/all';
+function fetchCountries() {
+        fetch(urlCountries)
+        .then(res => res.json())
+        .then((response) => {
+               let output = '';
+               response.forEach(function (country){
+                output += 
+                '<div class="box">'+
+                   '<img src="'+country.flags.svg+'" alt="" class="flag">'+
+                   '<div class="description">'+
+                       '<h5 class="country">'+country.name.common+'</h3>'+
+                       '<h6 class="population">Population: '+country.population+'</h6>'+
+                      '<h6 class="location">Region: '+country.continents+'</h6>'+
+                       '<h6 class="capital">Capital: '+country.capital+'</h6>'+
+                   '</div>'+
+                '</div>'
+               });
+               document.getElementById('list_countries').innerHTML = output; 
+        });
+}
