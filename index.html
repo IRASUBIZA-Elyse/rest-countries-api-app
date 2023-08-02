@@ -10,13 +10,13 @@
     <script src="https://kit.fontawesome.com/9946a7bf1d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body onload="fetchCountries()">
     <!-- navbar -->
     <div class="nav-bar">
         <div class="container menu">
             <h2>Where in the world ?</h2>
             <div class="mode">
-               <i class="fa-solid fa-moon"></i>
+               <i id="icon" class="fa-solid fa-moon"></i>
                <a class="mode" href="country.html">dark mode</a>
             </div>
         </div>
@@ -37,18 +37,8 @@
     </div>
    
     <div class="flex">   
-    <div class="container">
-        <div class="box">
-            <img src="" alt="" class="flag">
-            <div class="description">
-                <h5 class="country">Country</h3>
-                <h6 class="population">Population:</h6>
-                <h6 class="location">Region:</h6>
-                <h6 class="capital">Capital:</h6>
-            </div>
-        </div>
-    </div>
-    <div>
+    <div class="container" id="list_countries"></div>
+    <!-- <div>
         <ul class="list hide">
             <li class="options"><p>Africa</p></li>
             <li class="options"><p>America</p></li>
@@ -56,7 +46,7 @@
             <li class="options"><p>Europe</p></li>
             <li class="options"><p>Oceania</p></li>
          </ul>
-    </div>
+    </div> -->
 </div>
 
     
