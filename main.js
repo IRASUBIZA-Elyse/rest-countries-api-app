@@ -85,17 +85,15 @@ function fetchCountries() {
         .then((response) => {
                let output = '';
                response.forEach(function (country){
-                output += 
-                '<div class="box">'+
-                   '<img src="'+country.flags.svg+'" alt="" class="flag">'+
-                   '<div class="description">'+
-                       '<h5 class="country">'+country.name.common+'</h3>'+
-                       '<h6 class="population">Population: '+country.population+'</h6>'+
-                      '<h6 class="location">Region: '+country.continents+'</h6>'+
-                       '<h6 class="capital">Capital: '+country.capital+'</h6>'+
-                   '</div>'+
-                '</div>'
+                output += '<div class="box">'+
+                '<img src="'+country.flags.svg+'" alt="" class="flag">'+
+                '<div class="description">'+
+                    '<h5 class="country">'+country.name.common+'</h3>'+
+                    '<h6 class="population">Population: '+country.population+'</h6>'+
+                   '<h6 class="location">Region: '+country.continents+'</h6>'+
+                    '<h6 class="capital">Capital: '+country.capital+'</h6>'+
+                '</div>'+
+            '</div>'
                });
-               document.getElementById('list_countries').innerHTML = output; 
-        });
+               document.getElementById('list_countries').innerHTML = output;        });
 }
