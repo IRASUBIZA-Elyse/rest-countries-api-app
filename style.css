@@ -6,7 +6,7 @@
   --main-color: rgb(226, 226, 226);
   --primary-color:#ffffffab;
   --secondary-color:black;
-  --shadow-color:0 5px 5px rgb(223, 222, 222);
+  --shadow-color:0 5px 15px rgb(189, 186, 186);
 }
 .dark-theme{
   --main-color: rgba(5, 14, 20, 0.966);
@@ -16,12 +16,12 @@
 }
 
 body{
-  background-color: rgb(243, 243, 243);
+  background-color: var(--main-color);
   font-family: 'Lora', serif;
 }
 a{
   text-decoration: none;
-  color: black;
+  color: var(--secondary-color);
 }
 .container{
   max-width:1100px;
@@ -51,6 +51,7 @@ a{
 }
 .search-bar .region .search{
   height: 20px;
+  background-color: var(--primary-color);
   border-radius: 5px;
   border: none;
   box-shadow: var(--shadow-color);
@@ -100,10 +101,13 @@ a{
 
 .box{
   width: 150px;
-  background-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 5px 5px rgb(223, 222, 222);
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-color);
   margin-top: 20px;
   border-radius: 5px;
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
 }
 .box:hover{
   box-shadow: 0 5px 5px rgb(146, 145, 145);
@@ -126,9 +130,10 @@ h5,h6{
 .grey{
   color:rgb(165, 156, 156)
 }
-.flex{
+#list_countries{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 30px;
 }
 
