@@ -5,13 +5,13 @@
 :root{
   --main-color: rgb(226, 226, 226);
   --primary-color:#ffffffab;
-  --secondary-color:black;
+  --secondary-color:rgb(0, 0, 0);
   --shadow-color:0 5px 15px rgb(189, 186, 186);
 }
 .dark-theme{
   --main-color: rgba(5, 14, 20, 0.966);
   --primary-color:#151f27;
-  --secondary-color: white;
+  --secondary-color: rgba(255, 255, 255, 0.89);
   --shadow-color:0 5px 5px rgb(15, 14, 14);
 }
 
@@ -66,7 +66,7 @@ a{
 .selectField{
   width: 100%;
   padding: 5px 20px;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   box-shadow: var(--shadow-color);
   box-sizing: border-box;
   background-color: var(--primary-color);
@@ -77,11 +77,16 @@ a{
 .filter_region{
   color: var(--secondary-color);
 }
+.filter{
+  width: 100;
+  padding: 0px 10px;
+}
 .list{
   width: 100%;
-  background: rgba(236, 236, 236, 0.7);
+  background: var(--primary-color);
   box-shadow: var(--shadow-color);
   overflow: hidden;
+  color: var(--secondary-color);
   border-radius: 6px;
 }
 .hide{
@@ -96,7 +101,7 @@ a{
   position: relative;
 }
 .options:hover{
-  background-color: rgb(255, 249, 249);
+  background-color: var(--main-color);
 }
 
 .box{
@@ -133,7 +138,6 @@ h5,h6{
 #list_countries{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
+  gap: 40px;
 }
 

@@ -6,9 +6,11 @@
     <title>Countries App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" media="screen and (max-width:600px)" href="./mobile.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9946a7bf1d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./style.css">
+    
     
 </head>
 <body onload="fetchCountries()">
@@ -26,32 +28,26 @@
     <!-- search -->
     <div class="search-bar">
         <div class="container region">
-            <input type="text" placeholder="search a country" class="search">
+            <input type="text" placeholder="search a country......" class="search">
             
             <div class="selector">
                 <div class="selectField">
-                    <p class="filter"> <span class="filter_region">filter by region <i class="fa-solid fa-caret-down"></i></span></p>
-                    
+                    <p class="filter"> <span class="filter_region">filter by region </span><i class="fa-solid fa-caret-down"></i></p>
                 </div>
-                
+                    <div>
+                       <ul class="list hide">
+                           <li class="options"><p>Africa</p></li>
+                           <li class="options"><p>America</p></li>
+                           <li class="options"><p>Asia</p></li>
+                           <li class="options"><p>Europe</p></li>
+                           <li class="options"><p>Oceania</p></li>
+                        </ul>
+                    </div>   
             </div>
         </div>
     </div>
-   
-    <div class="flex">   
+     
     <div class="container" id="list_countries"></div>
-    <!-- <div>
-        <ul class="list hide">
-            <li class="options"><p>Africa</p></li>
-            <li class="options"><p>America</p></li>
-            <li class="options"><p>Asia</p></li>
-            <li class="options"><p>Europe</p></li>
-            <li class="options"><p>Oceania</p></li>
-         </ul>
-    </div> -->
-</div>
-
-    
     
     <script src="./main.js"></script>
 </body>

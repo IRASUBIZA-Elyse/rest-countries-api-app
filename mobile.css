@@ -1,0 +1,65 @@
+/* .menu, .mode{
+    font-size: 12px;
+    height: 40px;
+    margin: 8px;
+    margin-top: 0;
+}
+.mode{
+    margin-top: 33px;
+    font-size: 15px;
+} */
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: small;
+}
+.region{
+    display:block;
+    margin-top: 20px;
+  }
+.search-bar .region .search{
+    width: 80%;
+    height: 35px;
+    margin-left: 30px;
+
+}
+.filter_region{
+    padding-right: 50px;
+  }
+.selectField{
+    width: 60%;
+    height: 45px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+   
+  }
+
+#list_countries{
+    display: block;
+    max-width: fit-content;
+    /* margin-left: 80px; */
+}
+.box{
+    width: 250px;
+    background-color: var(--primary-color);
+    box-shadow: var(--shadow-color);
+    margin-top: 20px;
+    border-radius: 5px;
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+.box:hover{
+    box-shadow: 0 5px 5px rgb(146, 145, 145);
+  }
+.box .flag{
+    width: 250px;
+    height: 150px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
