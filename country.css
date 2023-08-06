@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+  }
+ :root {
+    --background-color: rgb(226, 226, 226);
+    --box-color:#ffffffab;
+    --font-color:black;
+    --shadow-color:0 5px 15px rgb(189, 186, 186);
+  }
+ .dark-theme{
+    --background-color: rgba(5, 14, 20, 0.966);
+    --box-color:#151f27;
+    --font-color: rgb(231, 229, 229);
+    --shadow-color:0 5px 5px rgb(15, 14, 14);
+  }
+  body{
+    background-color: var(--background-color);
+    font-family: 'Lora', serif;
+  }
+  a{
+    text-decoration: none;
+    color: var(--font-color);
+  }
+  .container{
+    max-width:1100px;
+    margin: auto;
+    overflow: auto;
+  }
+  /* navbar */
+  .nav-bar{
+    background-color: var(--box-color);
+    box-shadow:var(--shadow-color);
+    margin-bottom: 5px;
+    color: var(--font-color);
+  }
+  .nav-bar .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-right: 40px;
+  }
+/* styling the countries page */
+.country_content{
+    display: grid; 
+    grid-template-columns: 2fr, 1fr, 1fr;  
+    grid-template-rows: 2fr, 1fr;
+}
+.country_flag{
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 3;
+  width: 400px;
+}
+
+.border_countries{
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+}
+
+/* back button */
+.btn{
+  background-color:var(--box-color);
+  margin-top: 10px;
+  margin-bottom: 15px;
+  box-shadow: var(--shadow-color);
+  border-radius: 3px;
+  border: none;
+  padding: 0.3rem 2rem;
+  color:var(--font-color);
+}
+.btn_back{
+  background-color: var(--box-color);
+  padding: 0.3rem 1rem;
+  border-radius: 3px;
+  box-shadow: var(--shadow-color);
+}
+
+.borders{
+  display: inline;
+  margin-right: 10px;
+  color: var(--font-color);
+}
+.mg5{
+  margin-bottom: 5px;
+  color:var(--font-color);
+}
+.mg10{
+  margin-top: 50px;
+}
+.p10{
+  padding-bottom: 10px;
+}
+.mg7{
+  margin-top: 35px;
+}
+.pd{
+  padding-left: 15px;
+}
