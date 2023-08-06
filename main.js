@@ -80,7 +80,8 @@ function searchCountry(name){
 }
 
 function dataElt(data){
-        console.log(datas)
+        console.log(data)
+        console.log(data[0].languages)
         output = '<div class="box">'+
                     '<img src="'+data[0].flags.svg+'" alt="" class="flag">'+
                     '<div class="description">'+
@@ -104,7 +105,8 @@ function fetchCountries() {
         .then((response) => {
                let output = '';
                response.forEach(function (country){
-                output += '<div class="box" onclick = singleCountry()>'+
+                
+                output += '<div class="box" onclick = "singleCountry(&quot;'+country.name.common+'&quot)">'+
                 '<img src="'+country.flags.svg+'" alt="" class="flag">'+
                 '<div class="description">'+
                     '<h5 class="country">'+country.name.common+'</h3>'+
@@ -119,8 +121,80 @@ function fetchCountries() {
       
 }
 
-function singleCountry(response){
-        window.location.href = "./country.html"
+// eventListener on boxes
+
+let countryFlag = document.querySelector(".box")
+// countryFlag.addEventListener("click", () =>{
+        
+//            let countryName = "rwanda"
+//            oneCountry(countryName)
+         
+//    })
+function singleCountry(singleName){
+        
+       
+        window.location.href = "./country.html?name="+singleName;
+        }
+function oneCountry(){
+                const queryString = window.location.search;
+                const urlParam = new URLSearchParams(queryString);
+                const name = urlParam.get("name");
+                fetch(`https://restcountries.com/v3.1/name/${name}`)
+                .then(resp => resp.json())
+                .then(data => {
+                        console.log(data[0])
+                        let output = '<div class="country_flag">'+
+                       '<img class="country_flag" src="'+data[0].flags.svg+'" alt="">'+
+                    '</div>'+
+        
+                   
+                    '<div class="mg10 country_details1">'+
+                        '<h2 class="p10 country_name">'+data[0].name.common+'</h2>'+
+                        '<h5 class="mg5 native_name">Native Name: ' +data[0].name.official+'</h5>'+
+                        '<h5 class="mg5 country_population">Population: '+data[0].population+'</h5>'+
+                        '<h5 class="mg5 country_location">Region: '+data[0].region+'</h5>'+
+                        '<h5 class="mg5 country_subRegion">Sub Region: '+data[0].subregion+'</h5>'+
+                        '<h5 class="mg5 country_capital">Capital: '+data[0].capital[0]+'</h5>'+
+                    '</div>'+
+                        
+                    '<div class="mg10 country_details2">'+
+                        '<h5 class="mg5 mg7 top_level_domain">Top Level Domain: '+data[0].tld[0]+'</h5>'+
+                        '<h5 class="mg5 country_currencies">Currencies: ';
+                       
+                        for (const key in data[0].currencies) {
+                                output += '<span>'+data[0].currencies[key].name+', </span>';
+                                 
+                         }
+                        output += '</h5>'+
+                        '<h5 class="mg5 country_languages">Languages: ';
+                        for (const key in data[0].languages) {
+                               output += '<span>'+data[0].languages[key]+', </span>';
+                                
+                        }
+                        output += '</h5>'+
+                    '</div>'+
+                        
+                    '<div class="mg10 border_countries">'+
+                        '<h5 class="borders">Border Countries:</h5>';
+                        if(data[0].borders){
+
+                                data[0].borders.forEach(function(border, index){
+                                        if(index > 2){
+                                                return;
+                                        } 
+                                        output += '<button class="btn btn_3">'+border+'</button>';
+                                       
+                                        
+                                })
+                        }
+                       output += '</div>';
+                    document.getElementById('viewSingleCountry').innerHTML = output;
+                })
+                
 }
+
+
+        
+
 
 

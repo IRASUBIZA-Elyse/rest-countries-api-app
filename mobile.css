@@ -1,3 +1,9 @@
+.dark-theme{
+  --main-color: rgba(5, 14, 20, 0.966);
+  --background-color:#151f27;
+  --font-color: rgba(255, 255, 255, 0.89);
+  --shadow-color:0 5px 5px rgb(15, 14, 14);
+}
 .menu{
   display: flex;
   justify-content: space-between;
@@ -14,9 +20,7 @@
     margin-left: 30px;
 
 }
-.filter_region{
-    padding-right: 50px;
-  }
+
 .selectField{
     width: 60%;
     height: 45px;
@@ -26,7 +30,14 @@
     margin-left: 30px;
    
   }
-
+  
+.filter{
+  display: flex; 
+  flex-direction: row;
+}
+.filter_region{
+  padding-right: 20px;
+}
 #list_countries{
     display: block;
     max-width: fit-content;
@@ -34,11 +45,11 @@
 }
 .box{
     width: 250px;
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
     box-shadow: var(--shadow-color);
     margin-top: 20px;
     border-radius: 5px;
-    color: var(--secondary-color);
+    color: var(--font-color);
     display: flex;
     flex-direction: column;
     font-size: 20px;
@@ -66,4 +77,9 @@
   height: auto;
   margin: auto;
   margin-top: 20px;
+}
+
+.options{
+  width: 70%;
+  margin: auto 10px;
 }

@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="country.css">
     <link rel="stylesheet" media="screen and (max-width:600px)" href="./mobile.css">
 </head>
-<body>
+<body onload="oneCountry()">
     
     <div class="nav-bar">
         <div class="container menu">
             <h2>Where in the world ?</h2>
-            <div class="mode">
-               <i class="fa-solid fa-moon"></i>
+            <div id="icon"class="mode">
+               <i  class="fa-solid fa-moon"></i>
                <a class="mode" href="#">dark mode</a>
             </div>
         </div><b></b>
@@ -26,7 +26,7 @@
         <div class="mg10 back_btn">
             <a class="btn_back" href="index.html"><i class="fa-solid fa-arrow-left"></i> <span class="pd">back</span></a>
         </div>
-        <div class="mg10 country_content">
+        <div class="mg10 country_content" id="viewSingleCountry">
             <div class="country_flag">
                 <img class="country_flag" src="" alt="">
             </div>
@@ -37,6 +37,7 @@
                 <h5 class="mg5 native_name">Native Name:</h5>
                 <h5 class="mg5 country_population">Population:</h5>
                 <h5 class="mg5 country_location">Region:</h5>
+                <h5 class="mg5 country_subRegion">Sub Region:</h5>
                 <h5 class="mg5 country_capital">Capital:</h5>
             </div>
                 
@@ -48,15 +49,15 @@
                 
             <div class="mg10 border_countries">
                 <h5 class="borders">Border Countries:</h5>
-                <button class="btn btn_1">button1</button>
-                <button class="btn btn_2">button2</button>
-                <button class="btn btn_3">button3</button>
+                <button class="btn btn_1">border1</button>
+                <button class="btn btn_2">border2</button>
+                <button class="btn btn_3">border3</button>
             </div>
 
             
         </div>
     </div>
-
+  <script src="./main.js"></script>
     
 </body>
 </html>
