@@ -104,7 +104,7 @@ function fetchCountries() {
         .then((response) => {
                let output = '';
                response.forEach(function (country){
-                output += '<div class="box">'+
+                output += '<div class="box" onclick = singleCountry()>'+
                 '<img src="'+country.flags.svg+'" alt="" class="flag">'+
                 '<div class="description">'+
                     '<h5 class="country">'+country.name.common+'</h3>'+
@@ -113,10 +113,14 @@ function fetchCountries() {
                     '<h6 class="capital">Capital: '+country.capital+'</h6>'+
                 '</div>'+
             '</div>'
+
                });
                document.getElementById('list_countries').innerHTML = output;        });
+      
 }
-// document.getElementById('list_countries').addEventListener("click", () =>{
-//         fetch
 
-// })
+function singleCountry(response){
+        window.location.href = "./country.html"
+}
+
+
