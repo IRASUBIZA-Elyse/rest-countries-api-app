@@ -81,8 +81,7 @@ function searchCountry(name){
 
 function dataElt(data){
         console.log(data)
-        console.log(data[0].languages)
-        output = '<div class="box">'+
+                output = '<div class="box">'+
                     '<img src="'+data[0].flags.svg+'" alt="" class="flag">'+
                     '<div class="description">'+
                       '<h5 class="country">'+data[0].name.common+'</h3>'+
@@ -124,15 +123,9 @@ function fetchCountries() {
 // eventListener on boxes
 
 let countryFlag = document.querySelector(".box")
-// countryFlag.addEventListener("click", () =>{
-        
-//            let countryName = "rwanda"
-//            oneCountry(countryName)
-         
-//    })
+
 function singleCountry(singleName){
         
-       
         window.location.href = "./country.html?name="+singleName;
         }
 function oneCountry(){
