@@ -76,10 +76,12 @@ a{
 
 .filter_region{
   color: var(--font-color);
+  padding: 0px 10px;
+  font-size: 80%;
 }
 .filter{
-  width: 100;
-  padding: 0px 10px;
+  display: flex;
+  flex-direction: row;  
 }
 .list{
   width: 100%;

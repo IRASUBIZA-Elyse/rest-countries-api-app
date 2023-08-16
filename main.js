@@ -81,7 +81,7 @@ function searchCountry(name){
 
 function dataElt(data){
         console.log(data)
-                output = '<div class="box">'+
+                output = '<div class="box" onclick = "singleCountry(&quot;'+data[0].name.common+'&quot)">'+
                     '<img src="'+data[0].flags.svg+'" alt="" class="flag">'+
                     '<div class="description">'+
                       '<h5 class="country">'+data[0].name.common+'</h3>'+
@@ -185,9 +185,3 @@ function oneCountry(){
                 })
                 
 }
-
-
-        
-
-
-
